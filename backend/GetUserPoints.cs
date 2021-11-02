@@ -22,7 +22,7 @@ namespace PointlessApp
 
         [FunctionName("GetUserPoints")]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             [CosmosDB(
                 databaseName: "pointlessapp",
                 collectionName: "users",

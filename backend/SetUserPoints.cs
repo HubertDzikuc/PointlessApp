@@ -23,7 +23,7 @@ namespace PointlessApp
 
         [FunctionName("SetUserPoints")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "put", Route = null)] HttpRequest req,
             [CosmosDB(
                 databaseName: "pointlessapp",
                 collectionName: "users",
