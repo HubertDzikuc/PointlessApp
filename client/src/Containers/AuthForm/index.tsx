@@ -1,5 +1,6 @@
-import { Pane, Button, Spinner, Heading, TextInputField, Tooltip, LockIcon } from 'evergreen-ui';
+import { Pane, Button, Spinner, Heading, TextInputField, Tooltip } from 'evergreen-ui';
 import React, { ChangeEvent } from 'react';
+import { Link } from 'react-router-dom';
 
 interface IAuthFormProps {
 	onClick?: (event: any) => void;
@@ -51,9 +52,11 @@ const AuthForm: React.FC<IAuthFormProps> = () => {
 						<Button marginLeft={16} intent='success' appearance='primary' disabled width={80}>
 							<Spinner size={12} />
 						</Button> :
-						<Button marginLeft={16} intent='success' appearance='primary' width={80} onClick={() => setIsAuthenticated(true)}>
-							Zaloguj
-						</Button>
+						<Link to='/home'>
+							<Button marginLeft={16} intent='success' appearance='primary' width={80} onClick={() => setIsAuthenticated(true)}>
+								Zaloguj
+							</Button>
+						</Link>
 					}
 				</Pane>
 			</form>
